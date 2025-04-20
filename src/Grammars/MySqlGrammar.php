@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\Grammars\MySqlGrammar as IlluminateMySqlGrammar;
 use Illuminate\Support\Fluent;
 
 /**
- * Class changes the UUID type from default char(36) to binary(16).
+ * Class changes the UUID type from default char(36) to varbinary(16).
  */
 class MySqlGrammar extends IlluminateMySqlGrammar
 {
@@ -17,6 +17,6 @@ class MySqlGrammar extends IlluminateMySqlGrammar
      */
     protected function typeUuid(Fluent $column): string
     {
-        return 'binary(16)';
+        return 'varbinary(16)';
     }
 }
